@@ -1,7 +1,8 @@
 let scores = [0, 0];
 let roundScore = 0;
 let activePlayer = 0;
-let prevDice;
+let prevDice = 0;
+let dice = 0;
 
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
@@ -41,22 +42,34 @@ newGame();
 document.querySelector('.btn-new').addEventListener('click', newGame);
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
-  const dice = Math.floor(Math.random() * 6) + 1;
   prevDice = dice;
-  if (dice && prevDice === 6) {
-    scores[activePlayer] = 0;
-    document.getElementById(`current-${activePlayer}`).textContent = 0;
-  }
-  console.log(prevDice);
-  console.log(dice);
+  dice = Math.floor(Math.random() * 6) + 1;
   const diceDom = document.querySelector('.dice');
   diceDom.style.display = 'block';
   diceDom.src = `dice-${dice}.png`;
 
   if (dice !== 1) {
-    document.querySelector('.btn-hold').style.display = 'block';
     roundScore += dice;
+    if (dice === prevDice && dice === 6) {
+      scores[activePlayer] = 0;
+      document.getElementById(`score-${activePlayer}`).textContent = 0;
+      nextPlayer();
+    }
+    document.querySelector('.btn-hold').style.display = 'block';
+    console.log(prevDice);
+    console.log(dice);
+    console.log(scores[activePlayer]);
     document.getElementById(`current-${activePlayer}`).textContent = roundScore;
+    if (roundScore + scores[activePlayer] >= 100) {
+      document.querySelector(`#name-${activePlayer}`).textContent = 'Winner!';
+      document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
+      document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
+      document.querySelector('.dice').style.display = 'none';
+      document.querySelector('.btn-roll').style.display = 'none';
+      document.querySelector('.btn-hold').style.display = 'none';
+      document.querySelector('.btn-new').style.display = 'block';
+      document.querySelector(`#score-${activePlayer}`).innerHTML = scores[activePlayer] + roundScore;
+    }
   } else {
     nextPlayer();
   }
