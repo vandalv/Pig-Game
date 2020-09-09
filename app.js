@@ -4,7 +4,7 @@ let activePlayer = 0;
 let prevDice = 0;
 let dice = 0;
 
-console.log('Hello app!');
+console.log('Hello app1!');
 
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
