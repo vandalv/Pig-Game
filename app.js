@@ -4,13 +4,6 @@ let activePlayer = 0;
 let prevDice = 0;
 let dice = 0;
 
-<<<<<<< HEAD
-console.log('Hello app!');
-=======
-console.log('Hello app!');
-console.log('Hello sup!');
->>>>>>> 58b71a075649a8a173de3d94fbb46233040791d4
-
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
   roundScore = 0;
