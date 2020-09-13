@@ -5,7 +5,6 @@ let prevDice = 0;
 let dice = 0;
 
 console.log('hello');
-console.log('sun');
 
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
