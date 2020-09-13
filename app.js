@@ -8,6 +8,7 @@ console.log('hello');
 console.log('world');
 console.log('world');
 console.log('world');
+console.log('sum');
 
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
