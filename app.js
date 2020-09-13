@@ -6,6 +6,7 @@ let dice = 0;
 
 console.log('hello');
 console.log('hello');
+console.log('world');
 
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
