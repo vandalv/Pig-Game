@@ -3,7 +3,11 @@ let roundScore = 0;
 let activePlayer = 0;
 let prevDice = 0;
 let dice = 0;
-console.log('User Input Scores');
+let winScore = 100;
+
+function getWinScore() {
+  winScore = document.getElementById('fname').value;
+}
 
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
@@ -58,7 +62,7 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
     }
     document.querySelector('.btn-hold').style.display = 'block';
     document.getElementById(`current-${activePlayer}`).textContent = roundScore;
-    if (roundScore + scores[activePlayer] >= 100) {
+    if (roundScore + scores[activePlayer] >= winScore) {
       document.querySelector(`#name-${activePlayer}`).textContent = 'Winner!';
       document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
       document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
