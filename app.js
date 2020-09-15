@@ -3,10 +3,6 @@ let roundScore = 0;
 let activePlayer = 0;
 let prevDice = 0;
 let dice = 0;
-let x = 'Hello';
-
-console.log('hello');
-console.log('world');
 
 function nextPlayer() {
   document.querySelector('.btn-hold').style.display = 'none';
@@ -60,9 +56,6 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
       nextPlayer();
     }
     document.querySelector('.btn-hold').style.display = 'block';
-    console.log(prevDice);
-    console.log(dice);
-    console.log(scores[activePlayer]);
     document.getElementById(`current-${activePlayer}`).textContent = roundScore;
     if (roundScore + scores[activePlayer] >= 100) {
       document.querySelector(`#name-${activePlayer}`).textContent = 'Winner!';
