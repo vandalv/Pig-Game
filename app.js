@@ -3,7 +3,7 @@ let roundScore = 0;
 let activePlayer = 0;
 let prevDice = 0;
 let dice = 0;
-var x = 'Hello';
+let x = 'Hello';
 
 console.log('hello');
 console.log('world');
