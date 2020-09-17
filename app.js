@@ -5,6 +5,7 @@ let prevDice = 0;
 let dice = 0;
 let winScore = 100;
 
+// eslint-disable-next-line no-unused-vars
 function getWinScore() {
   winScore = document.getElementById('fname').value;
 }
