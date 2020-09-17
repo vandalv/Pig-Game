@@ -69,9 +69,6 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
     }
   }
   if (diceOne === 1 || diceTwo === 1) {
-    nextPlayer();
-  }
-  if (diceOne === 6 && diceTwo === 6) {
     scores[activePlayer] = 0;
     document.getElementById(`score-${activePlayer}`).textContent = scores[activePlayer];
     nextPlayer();
